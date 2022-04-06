@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/input"
+        android:title="@string/input"
+        android:icon="@drawable/ic_input_foreground"
+        />
+    <item android:id="@+id/cancel"
+        android:title="@string/cancel"
+        android:icon="@drawable/ic_cancel_foreground"
+        />
+    <item
+        android:id="@+id/toMove"
+        android:icon="?android:attr/actionModeWebSearchDrawable"
+        android:title="@string/to_move" />
+</menu>

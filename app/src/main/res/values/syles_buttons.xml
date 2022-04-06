@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NormalBlueButton">
+        <item name="colorPrimary">#2E9FFA</item>
+        <item name="colorPrimaryDark">#2196F3</item>
+        <item name="colorAccent">#ffffff</item>
+        <item name="colorButtonNormal">#2196F3</item>
+    </style>
+</resources>

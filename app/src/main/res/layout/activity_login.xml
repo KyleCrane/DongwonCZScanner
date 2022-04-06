@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_login_bg3"
+    android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+    tools:context=".activity.LoginActivity"
+    >
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/program_select"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_user"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight=".30"
+                android:background="@drawable/login_checkbox_bgcolors"
+                app:srcCompat="@drawable/ic_user" />
+
+            <EditText
+                android:id="@+id/et_username"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight=".70"
+                android:background="@drawable/login_checkbox_bgcolors"
+
+                android:hint="ID"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/program_select"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <ImageView
+                android:id="@+id/img_password"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight=".30"
+                android:background="@drawable/login_checkbox_bgcolors"
+                app:srcCompat="@drawable/ic_password" />
+
+            <EditText
+                android:id="@+id/pw_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".70"
+                android:background="@drawable/login_checkbox_bgcolors"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/program_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.911"
+            tools:layout_editor_absoluteX="0dp">
+
+            <RadioButton
+                android:id="@+id/rb_mat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:layout_weight="0.25"
+                android:background="@drawable/login_checkbox_bgcolors"
+
+                android:buttonTint="#FFC107"
+                android:minHeight="70dp"
+                android:text="MAT"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white" />
+
+            <RadioButton
+                android:id="@+id/rb_qc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:background="@drawable/login_checkbox_bgcolors"
+                android:buttonTint="#FFC107"
+                android:minHeight="70dp"
+                android:text="QC"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white" />
+
+            <RadioButton
+                android:id="@+id/rb_prod"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:background="@drawable/login_checkbox_bgcolors"
+
+                android:buttonTint="#FFC107"
+                android:minHeight="70dp"
+                android:text="PROD"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white" />
+
+            <RadioButton
+                android:id="@+id/rb_ship"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:background="@drawable/login_checkbox_bgcolors"
+                android:buttonTint="#FFC107"
+                android:minHeight="70dp"
+                android:text="SHIP"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white" />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="71dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <Button
+                android:id="@+id/btn_login"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:height="70sp"
+                android:onClick="loginOnClick"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:theme="@style/NormalBlueButton" />
+
+        </RelativeLayout>
+
+    <TextView
+        android:id="@+id/buildVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="version: "
+        android:textColor="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

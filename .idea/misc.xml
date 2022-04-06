@@ -26,8 +26,10 @@
         <entry key="..\:/Users/michael.kovarik/AndroidStudioProjects/DongwonCZScanner/app/src/main/res/menu/wh_input_bottom_menu.xml" value="0.20885416666666667" />
         <entry key="..\:/Users/michael.kovarik/AndroidStudioProjects/DongwonCZScanner/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3880208333333333" />
         <entry key="..\:/Users/michael.kovarik/AndroidStudioProjects/DongwonCZScanner/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/activity_login.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/activity_ship_main_menu.xml" value="0.35054347826086957" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/activity_wh_input.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/activity_wh_output_fork.xml" value="0.17" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/fragment_wh_input_cancel.xml" value="0.35054347826086957" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/fragment_wh_input_ccm_tab.xml" value="0.35054347826086957" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/fragment_wh_input_input.xml" value="0.20260416666666667" />
@@ -35,6 +37,11 @@
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/fragment_wh_input_to_move_ccm.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/fragment_wh_input_to_move_door.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/listview_ship_whinput.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/table_view_cell_layout.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/table_view_column_header_layout.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/table_view_corner_layout.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/table_view_row_header_layout.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/layout/wh_output_fork_list.xml" value="0.25" />
         <entry key="..\:/Users/michael.kovarik/Desktop/Programming/DongwonCZScanner/app/src/main/res/menu/wh_input_bottom_menu.xml" value="0.3625" />
       </map>
     </option>

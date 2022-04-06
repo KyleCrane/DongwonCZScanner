@@ -1,6 +1,7 @@
 package com.dongwon.scanner.sql.ship;
 
 import com.dongwon.scanner.model.ship.WhInput;
+import com.dongwon.scanner.model.ship.WhOutputFork;
 import com.dongwon.scanner.sql.RetrofitResult;
 
 import retrofit2.Call;
@@ -14,6 +15,8 @@ public interface Ship {
     Call<WhInput> checkMovePalletFromProdToWh(@Query("procedureName") String procedureName, @Query("parameters") String parameters);
     @POST("CallProcedureSingleResult")
     Call<RetrofitResult> movePalletFromProdToWh(@Query("procedureName") String procedureName, @Query("parameters") String parameters);
-    @POST("CallProcedure")
-    Call<RetrofitResult> callProcedure(@Query("procedureName") String procedureName, @Query("parameters") String parameters, @Query("multiTables") String multiTables);
+   /* @POST("CallProcedure")
+    Call<WhOutputFork> callProcedure(@Query("procedureName") String procedureName, @Query("parameters") String parameters, @Query("multiTables") String multiTables);*/
+    @POST("CallProcedureSingleResult")
+    Call<WhOutputFork> shipOrderList(@Query("procedureName") String procedureName, @Query("parameters") String parameters);
 }

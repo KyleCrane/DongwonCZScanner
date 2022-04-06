@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.WhInputCancelFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D9EEFF"
+            android:padding="16sp"
+            android:shrinkColumns="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="5dp">
+
+                <TextView
+                    android:id="@+id/qrCodeLabel"
+                    android:text="QR Code"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/qrCodeVal"
+                    android:paddingLeft="8sp"
+                    android:text="" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/partNumberLabel"
+                    android:text="Part-number"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/partNumberVal"
+                    android:paddingLeft="8sp"
+                    android:text="" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/partNameLabel"
+                    android:text="Part name"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/partNameVal"
+                    android:paddingLeft="8sp"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/qtyLabel"
+                    android:text="Qty"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/qtyVal"
+                    android:paddingLeft="8sp"
+                    android:text="" />
+            </TableRow>
+
+        </TableLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red_background"
+            android:text="Confirm / Potvrditt"
+            android:textColorLink="@color/red_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+            app:layout_constraintVertical_bias="0.716" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
