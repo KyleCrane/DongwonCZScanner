@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/infoSection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <TextView
@@ -17,17 +16,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
+            android:padding="10dp"
             android:text="Ship no"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/loctName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Loct name"
             android:textSize="18sp" />
 
         <TextView
@@ -35,11 +25,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
             android:text="Order status"
-            android:textSize="18sp" />
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/infoSection"
+ />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/loctName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:text="Loct name"
+        android:textSize="14sp" />
 
 
-</RelativeLayout>
+</LinearLayout>

@@ -29,6 +29,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnSelect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:choiceMode="singleChoice"
+        android:listSelector="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@+id/btnDate" />
 
     <Button
@@ -36,6 +38,7 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="btnSelectOnClick"
         android:text="Vybrat"
         android:textColor="@color/white"
         android:textSize="20sp"
