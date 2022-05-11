@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
+            android:name=".activity.ship.WhOutputForkDetail"
+            android:exported="false" />
+        <activity
             android:name=".activity.ship.WhOutputForkActivity"
             android:exported="false" />
         <activity

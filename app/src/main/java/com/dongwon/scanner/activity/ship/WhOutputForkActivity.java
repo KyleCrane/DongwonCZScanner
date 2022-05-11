@@ -10,6 +10,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -63,6 +65,22 @@ public class WhOutputForkActivity extends AppCompatActivity {
                 utils.showDialogue(tmp.getLoctName());
             }
         });
+        btnDate.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                loadDataAndSetupUI();
+            }
+        });
     }
     //Back button
     @Override
@@ -97,7 +115,7 @@ public class WhOutputForkActivity extends AppCompatActivity {
                     }
                 },year,month,dayOfMonth);
         datePickerDialog.show();
-        loadDataAndSetupUI();
+     //   loadDataAndSetupUI();
     }
     //Date init
     public void btnDateInit() {
@@ -125,38 +143,9 @@ public class WhOutputForkActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<WhOutputFork>> call, Response<List<WhOutputFork>> response) {
                 Log.i("MES",Integer.toString(response.code()));
-                //     Boolean result = response.body();
                 List<WhOutputFork> result = response.body();
-             /*   shipProperties.add(new WhOutputFork("123456","HMMC","C"));
-                shipProperties.add(new WhOutputFork("99999","KaSK","I"));
-                shipProperties.add(new WhOutputFork("88888","KaSK","I"));
-                shipProperties.add(new WhOutputFork("5555","MCZ","R"));
-                shipProperties.add(new WhOutputFork("4778","KaSK","C"));
-                shipProperties.add(new WhOutputFork("879789","KaSK","C"));*/
-               /* for(WhOutputFork fork : result){
-                    shipProperties.add()
-                }*/
                 propertyArrayAdapter adapter = new propertyArrayAdapter(getBaseContext(),0,new ArrayList<WhOutputFork>(result));
                 listview.setAdapter(adapter);
-               /* if(result.getHasError() == true) {
-                    ((WhInputActivity)getActivity()).utils.showDialogue("Error!",result.getErrorMessage());
-                    HideLoadingSpinner();
-                    clear();
-                    return;
-                }*/
-                //   Log.i("MES",response.body().toString());
-             /*   WhInputActivity main =  ((WhInputActivity)getActivity());
-
-                TextView partNumber = getView().findViewById(R.id.partNumberVal);
-                partNumber.setText(result.getPartId());
-                TextView partName = getView().findViewById(R.id.partNameVal);
-                partName.setText(result.getPartName());
-                TextView qty = getView().findViewById(R.id.qtyVal);
-                qty.setText(String.valueOf(result.getQty()));
-
-                HideLoadingSpinner();*/
-                //    main.utils.showDialogue(response.body().getName());
-                //   JSONObject myObject = response.body();
             }
             @Override
             public void onFailure(Call<List<WhOutputFork>> call, Throwable t) {

@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.fragment.app.Fragment;
+
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -91,7 +93,9 @@ public class WhInputInputFragment extends Fragment  {
                    clear();
                    return;
                }
-               onClickConfirm();
+               else {
+                   onClickConfirm();
+               }
            }
        });
       //  getActivity().getActionBar().setIcon(R.drawable.ic_input_foreground);
@@ -201,35 +205,42 @@ public class WhInputInputFragment extends Fragment  {
 
     }
     public void onClickConfirm() {
-        SharedPreferences prefs = getActivity().getSharedPreferences("com.dongwon.scanner.emp",Context.MODE_PRIVATE);
-        String empId = prefs.getString("com.dongwon.scanner.emp.id","");
-        Call<RetrofitResult> call = RetrofitClientShip.getInstance()
-                .getShipApi()
-                .movePalletFromProdToWh("TPDAM_PRODUCT_INOUT_IN_STD_S",
-                        ((TextView) getView().findViewById(R.id.qrCodeVal)).getText()
-                                + "&delimiter&"
-                                + ((TextView) getView().findViewById(R.id.partNumberVal)).getText()
-                                + "&delimiter&"
-                                + empId
-                                + "&delimiter&"
-                                + "P01-01-01"
-                                + "&delimiter&"
-                                + ((TextView) getView().findViewById(R.id.qtyVal)).getText()
-                );
-        //.movePalletFromProdToWh("_TEST_PROCEDURE","");
-        call.enqueue(new Callback<RetrofitResult>() {
-            @Override
-            public void onResponse(Call<RetrofitResult> call, Response<RetrofitResult> response) {
-                Log.i("MES",Integer.toString(response.code()));
-                //     Boolean result = response.body();
-                RetrofitResult result = response.body();
-                if(result.getHasError() == true) {
-                    ((WhInputActivity)getActivity()).utils.showDialogue("Error!",result.getErrorMessage());
-                    HideLoadingSpinner();
-                    return;
-                }
-                //   Log.i("MES",response.body().toString());
-                WhInputActivity main =  ((WhInputActivity)getActivity());
+        try {
+            TextView qtyVal = getView().findViewById(R.id.qtyVal);
+            TextView partIdVal = getView().findViewById(R.id.partNumberVal);
+            if (TextUtils.isEmpty(qtyVal.getText()) || TextUtils.isEmpty(partIdVal.getText())) {
+                throw new Exception("Nebyly správně načteny všechny informace QR kódu. Prosím nascanujte jej znovu.");
+            }
+
+            SharedPreferences prefs = getActivity().getSharedPreferences("com.dongwon.scanner.emp", Context.MODE_PRIVATE);
+            String empId = prefs.getString("com.dongwon.scanner.emp.id", "");
+            Call<RetrofitResult> call = RetrofitClientShip.getInstance()
+                    .getShipApi()
+                    .movePalletFromProdToWh("TPDAM_PRODUCT_INOUT_IN_STD_S",
+                            ((TextView) getView().findViewById(R.id.qrCodeVal)).getText()
+                                    + "&delimiter&"
+                                    + ((TextView) getView().findViewById(R.id.partNumberVal)).getText()
+                                    + "&delimiter&"
+                                    + empId
+                                    + "&delimiter&"
+                                    + "P01-01-01"
+                                    + "&delimiter&"
+                                    + ((TextView) getView().findViewById(R.id.qtyVal)).getText()
+                    );
+            //.movePalletFromProdToWh("_TEST_PROCEDURE","");
+            call.enqueue(new Callback<RetrofitResult>() {
+                @Override
+                public void onResponse(Call<RetrofitResult> call, Response<RetrofitResult> response) {
+                    Log.i("MES", Integer.toString(response.code()));
+                    //     Boolean result = response.body();
+                    RetrofitResult result = response.body();
+                    if (result.getHasError() == true) {
+                        ((WhInputActivity) getActivity()).utils.showDialogue("Error!", result.getErrorMessage());
+                        HideLoadingSpinner();
+                        return;
+                    }
+                    //   Log.i("MES",response.body().toString());
+                    WhInputActivity main = ((WhInputActivity) getActivity());
 
                /* TextView partNumber = getView().findViewById(R.id.partNumberVal);
                 partNumber.setText(result.getPartId());
@@ -238,25 +249,34 @@ public class WhInputInputFragment extends Fragment  {
                 TextView qty = getView().findViewById(R.id.qtyVal);
                 qty.setText(String.valueOf(result.getQty()));*/
 
-                HideLoadingSpinner();
-                //    main.utils.showDialogue(response.body().getName());
-                //   JSONObject myObject = response.body();
-                Snackbar snackbar = Snackbar.make(getView(),"Paleta přesunuta do skladu.\nPalette moved to warehouse.",Snackbar.LENGTH_LONG);
-                View snackView = snackbar.getView();
-                snackView.setBackgroundColor(getResources().getColor(R.color.success));
-                TextView snackText = (TextView) snackView.findViewById(R.id.snackbar_text);
-                //snackText.setTextSize(getResources().getDimension(R.dimen.font_size_large));
-                snackbar.show();
-            }
-            @Override
-            public void onFailure(Call<RetrofitResult> call, Throwable t) {
-                ((WhInputActivity)getActivity()).utils.showDialogue("Error!",t.getMessage());
+                    HideLoadingSpinner();
+                    //    main.utils.showDialogue(response.body().getName());
+                    //   JSONObject myObject = response.body();
+                    Snackbar snackbar = Snackbar.make(getView(), "Paleta přesunuta do skladu.\nPalette moved to warehouse.", Snackbar.LENGTH_LONG);
+                    View snackView = snackbar.getView();
+                    snackView.setBackgroundColor(getResources().getColor(R.color.success));
+                    TextView snackText = (TextView) snackView.findViewById(R.id.snackbar_text);
+                    //snackText.setTextSize(getResources().getDimension(R.dimen.font_size_large));
+                    snackbar.show();
+                }
 
-                HideLoadingSpinner();
-                //      Toast.makeText(getApplicationContext(), "An error has occured\n"+t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-        clear();
+                @Override
+                public void onFailure(Call<RetrofitResult> call, Throwable t) {
+                    ((WhInputActivity) getActivity()).utils.showDialogue("Error!", t.getMessage());
+
+                    HideLoadingSpinner();
+                    //      Toast.makeText(getApplicationContext(), "An error has occured\n"+t.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+            clear();
+        }catch (Exception ex) {
+            ((WhInputActivity)getActivity()).utils.showDialogue("Error!",ex.getMessage());
+        }
+        finally {
+            ShowLoadingSpinner();
+            clear();
+            HideLoadingSpinner();
+        }
     }
     private void clear() {
         TextView qrCode = getView().findViewById(R.id.qrCodeVal);
