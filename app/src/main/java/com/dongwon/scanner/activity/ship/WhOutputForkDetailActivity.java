@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.dongwon.scanner.R;
 
-public class WhOutputForkDetail extends AppCompatActivity {
+public class WhOutputForkDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

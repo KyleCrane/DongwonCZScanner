@@ -1,0 +1,220 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.android.tools.lint",
+    "module": "lint-checks",
+    "version": "30.0.4",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.0.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.tools.lint",
+          "module": "lint-api",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.4.32"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "lint-checks-30.0.4.jar",
+          "url": "lint-checks-30.0.4.jar",
+          "size": 5066770,
+          "sha512": "14ddaa95d54f80e5a51aa38af5ffe3cfea2d2bfbffcc21f9091f86203a341c8090bca102606dfb7e0f310181b15c3c5ede1ea9a92ce8cad4bbb3ed7646fd48df",
+          "sha256": "7bd817ff4060fdb13750c5a45daccd768b47a1363607da3ee9eceba46c99d569",
+          "sha1": "d04e1451cfaf6cc36efae2e0d4a1dcae4053f6b5",
+          "md5": "e22c0e1cea10113eaf3af0dfa975dc43"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.tools",
+          "module": "sdk-common",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "com.android.tools",
+          "module": "sdklib",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "com.android.tools",
+          "module": "common",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "com.android.tools.layoutlib",
+          "module": "layoutlib-api",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "com.google.guava",
+          "module": "guava",
+          "version": {
+            "requires": "30.1-jre"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.6"
+          }
+        },
+        {
+          "group": "com.android.tools.external.com-intellij",
+          "module": "intellij-core",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "com.android.tools.external.com-intellij",
+          "module": "kotlin-compiler",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "com.android.tools.external.org-jetbrains",
+          "module": "uast",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "org.ow2.asm",
+          "module": "asm-analysis",
+          "version": {
+            "requires": "7.0"
+          }
+        },
+        {
+          "group": "net.sf.kxml",
+          "module": "kxml2",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.intellij.deps",
+          "module": "trove4j",
+          "version": {
+            "requires": "1.0.20181211"
+          }
+        },
+        {
+          "group": "com.android.tools.lint",
+          "module": "lint-api",
+          "version": {
+            "requires": "30.0.4"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.4.32"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "lint-checks-30.0.4.jar",
+          "url": "lint-checks-30.0.4.jar",
+          "size": 5066770,
+          "sha512": "14ddaa95d54f80e5a51aa38af5ffe3cfea2d2bfbffcc21f9091f86203a341c8090bca102606dfb7e0f310181b15c3c5ede1ea9a92ce8cad4bbb3ed7646fd48df",
+          "sha256": "7bd817ff4060fdb13750c5a45daccd768b47a1363607da3ee9eceba46c99d569",
+          "sha1": "d04e1451cfaf6cc36efae2e0d4a1dcae4053f6b5",
+          "md5": "e22c0e1cea10113eaf3af0dfa975dc43"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "lint-checks-30.0.4-javadoc.jar",
+          "url": "lint-checks-30.0.4-javadoc.jar",
+          "size": 957787,
+          "sha512": "03cdc48fc95a754489a0d7f72b5b915697b7951048b45b08cfc539f4fdf4609c1cb4fd8dc5ca608ebf39121e04f863e029d3c525e4163238922900d5f5536f0e",
+          "sha256": "626545b388077c1c3fa8b8e1497c203a5ec1e47ee21ad20c9dd53b5d616392fc",
+          "sha1": "0e388942789611963df5558be9f4979682aab4c2",
+          "md5": "9aee1ac9054209a36b36eccdfba83e00"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "lint-checks-30.0.4-sources.jar",
+          "url": "lint-checks-30.0.4-sources.jar",
+          "size": 4709066,
+          "sha512": "84715683373e5d4cca4267941c1b03c8fcea2113df7f2dca0663e648d7dd002401b28509830f41f916adde80fb49d09549d70f70cd15371668241eb2a7e9dc3e",
+          "sha256": "b17d1c9678a20ecd0a635d45c519740f9ca2c39ce3f8275ec96af3325f553432",
+          "sha1": "5b063a4ef32f0e2bc5bb85e5a4cbe6ca87f3830e",
+          "md5": "6a458982e5ff79bb11bb158e27c4ce13"
+        }
+      ]
+    }
+  ]
+}

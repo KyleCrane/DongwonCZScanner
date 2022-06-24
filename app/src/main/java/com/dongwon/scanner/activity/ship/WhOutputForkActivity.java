@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.graphics.Color;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.text.Editable;
@@ -165,7 +165,11 @@ public class WhOutputForkActivity extends AppCompatActivity {
         WhOutputFork fork = (WhOutputFork) lv.getItemAtPosition(pos);
         if(fork == null)
             utils.showDialogue("Nebyla vybrána žádná položka!");
-        else utils.showDialogue(fork.getShipNo());
+        else {
+            Intent intent = new Intent(this, WhOutputForkDetailActivity.class);
+            intent.putExtra("forkinput",fork);
+            startActivity(intent);
+        }
     }
     class propertyArrayAdapter extends ArrayAdapter<WhOutputFork> {
         private Context context;
